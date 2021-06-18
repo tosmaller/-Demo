@@ -181,8 +181,7 @@
           this.createAnima()
           this.asyncTimes()
             .then(() => {
-              // this.setWeek(new Date().getDay())
-              this.setWeek(0)
+              this.setWeek(new Date().getDay())
               return Promise.resolve()
             })
             .then(() => {
