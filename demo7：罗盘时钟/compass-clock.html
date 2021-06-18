@@ -181,7 +181,8 @@
           this.createAnima()
           this.asyncTimes()
             .then(() => {
-              this.setWeek(new Date().getDay())
+              // this.setWeek(new Date().getDay())
+              this.setWeek(0)
               return Promise.resolve()
             })
             .then(() => {
@@ -355,11 +356,11 @@
             // 1500ms 完成全部变动
             let i = 1
             const weeks = ['日', '一', '二', '三', '四', '五', '六']
-            const times = 500 * 3 / Math.abs(target - i)
+            const times = 500 * 3 / Math.abs(7 - target - 1)
             const fun = () => {
               this.curWeek = weeks[i]
               if (target !== i) {
-                i += 1
+                i = i >= 6 ? 0 : (i + 1)
                 this.asyncTimes(times).then(() => {
                   fun()
                 })
