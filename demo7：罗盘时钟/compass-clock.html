@@ -181,6 +181,10 @@
           this.createAnima()
           this.asyncTimes()
             .then(() => {
+              this.setWeek(new Date().getDay())
+              return Promise.resolve()
+            })
+            .then(() => {
               this.init()
               return this.asyncTimes(500)
             }).then(() => {
@@ -264,7 +268,8 @@
             this.curDay = day
             this.curMonth = month
             this.curYear = year
-            this.curWeek = ['日', '一', '二', '三', '四', '五', '六'][week]
+            // this.setWeek(week)
+            // this.curWeek = ['日', '一', '二', '三', '四', '五', '六'][week]
             // 设置角度
             this.asyncTimes(500)
               .then(() => {
@@ -301,6 +306,7 @@
                 this.setTimer()
               })
           },
+
 
           setTimer() {
             this.i = new Date().getSeconds() // 获取当前秒数
@@ -345,6 +351,22 @@
               div.classList += ' hide'
             })
           },
+          setWeek(target){
+            // 1500ms 完成全部变动
+            let i = 1
+            const weeks = ['日', '一', '二', '三', '四', '五', '六']
+            const times = 500 * 3 / Math.abs(target - i)
+            const fun = () => {
+              this.curWeek = weeks[i]
+              if (target !== i) {
+                i += 1
+                this.asyncTimes(times).then(() => {
+                  fun()
+                })
+              }
+            }
+            fun()
+          },
           setDegs(target, length) {
             return 360 - (360 / length) * target + 90
           },
@@ -379,8 +401,7 @@
             return {
               left: `${r + x}px`,
               top: `${r - y}px`,
-              transform: `rotate(${deg - 90
-              }deg)`,
+              transform: `rotate(${deg - 90}deg)`,
               'transform-origin': `0 0`,
               display: 'block'
             }
