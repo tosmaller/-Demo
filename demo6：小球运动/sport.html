@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>小球运动</title>
+    <style>
+      .box {
+        width: 500px;
+        height: 500px;
+        border: 1px dashed #d3d3d3;
+        position: relative;
+      }
+      .box .boll {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px #000 solid;
+        display: inline-block;
+        position: absolute;
+        top: 0px;
+        left: 225px;
+        transition: top 6.7s;left 1s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <span class="boll"></span>
+    </div>
+  </body>
+  <script>
+    let clickStatus = 'stop' // 'stop', 'sport'
+    const boll = document.querySelector('.boll')
+    document.body.addEventListener('click', () => {
+      if (clickStatus === 'stop') {
+        console.log(boll)
+        clickStatus = 'sport'
+        boll.style.top = '450px'
+        // 仿运动
+        /*
+        */
+      }
+    })
+  </script>
+
+</html>
