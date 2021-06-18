@@ -5,4 +5,4 @@
 - Demo2:打印机 [Demo2](https://tosmaller.github.io/JSDemo/demo2%EF%BC%9A%E6%89%93%E5%AD%97%E6%9C%BA%EF%BC%88%E7%BA%AFCss%EF%BC%89/typing.html)
 - Demo3:拖拽 [Demo3](https://tosmaller.github.io/JSDemo/demo3%EF%BC%9A%E6%8B%96%E6%8B%BD/draw.html)
 - Demo4:文本高亮 [Demo4](https://tosmaller.github.io/JSDemo/demo4%EF%BC%9A%E6%96%87%E6%9C%AC%E9%AB%98%E4%BA%AE/highlight.html)
-            
+- Demo7:罗盘时钟 [Demo7](https://tosmaller.github.io/JSDemo/demo7%EF%BC%9A%E7%BD%97%E7%9B%98%E6%97%B6%E9%92%9F/compass-clock.html)       
